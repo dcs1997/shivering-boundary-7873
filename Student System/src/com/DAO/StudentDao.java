@@ -1,6 +1,9 @@
 package com.DAO;
 
-public class StudentDao {
-	
+import com.Exception.StudentException;
+import com.Model.Student;
 
+public interface StudentDao  {
+
+	public String registerStudent(Student student) throws StudentException;
 }
