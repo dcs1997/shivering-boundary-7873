@@ -2,11 +2,13 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.Exception.StudentException;
 import com.Model.Student;
 import com.Utility.DButil;
+
 
 public class StudentDAOImpl implements StudentDao {
 
@@ -28,7 +30,9 @@ public class StudentDAOImpl implements StudentDao {
 			if(x>0) {
 				res= student.getName()+" is successfully registered as student";
 				
+				
 			}
+			else System.out.println("invalid details");
 			
 			
 			
@@ -41,5 +45,39 @@ public class StudentDAOImpl implements StudentDao {
 		
 		return res;
 	}
+
+	@Override
+	public Student StudentLogin(String email, String password) throws StudentException {
+		// TODO Auto-generated method stub
+		Student st=null;
+		try(Connection conn=DButil.getConnection()){
+			
+			PreparedStatement ps=	conn.prepareStatement("Select * from Student where sEmail=? AND sPassword=?");
+			ps.setString(1, email);
+			ps.setString(2, password);
+			
+			ResultSet rs= ps.executeQuery();
+			
+			if(rs.next()) {
+				st= new Student();
+				st.setSid(rs.getInt("sid"));
+				st.setName(rs.getString("sname"));
+				st.setEmail(rs.getString("semail"));
+				st.setPassword(rs.getString("spassword"));
+			
+				
+			}
+			else throw new StudentException("Please enter a valid user");
+ 
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();	
+			throw new StudentException(e.getMessage());
+		}
+		
+		return st;
+	}
+
+	
 
 }
