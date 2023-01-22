@@ -21,14 +21,15 @@ public class RegisterStudentUseCase {
 			 System.out.println("Enter Student id");
 			 int id=sc.nextInt();
 			 
+			 sc.nextLine();
 			 System.out.println("Enter student name");
-			 String name=sc.next();
+			 String name=sc.nextLine();
 			 
 			 System.out.println("Enter student Email id");
-			 String email=sc.next();
+			 String email=sc.nextLine();
 			 
 			 System.out.println("Enter student password");
-			 String password=sc.next();
+			 String password=sc.nextLine();
 			 
 			 Student st= new Student();
 			 st.setSid(id);
@@ -45,7 +46,7 @@ public class RegisterStudentUseCase {
 			 
 		
 			 System.out.println("Do you want to add new Student? type (Y/N)");
-			 String result=sc.next();
+			 String result=sc.nextLine();
 			 
 			 if(result.equalsIgnoreCase("N")) {
 				 System.out.println("Thank you for registration");
