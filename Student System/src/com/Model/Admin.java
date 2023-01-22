@@ -2,38 +2,58 @@ package com.Model;
 
 public class Admin {
 
-	private String username;
-	private String password;
+	private int aId;
+	private String aName;
+	private String aEmail;
+	private String aPassword;
 	
 	public Admin() {
 		super();
 	}
 
-	public Admin(String username, String password) {
+	public Admin(int aId, String aName, String aEmail, String aPassword) {
 		super();
-		this.username = username;
-		this.password = password;
+		this.aId = aId;
+		this.aName = aName;
+		this.aEmail = aEmail;
+		this.aPassword = aPassword;
 	}
 
-	public String getUsername() {
-		return username;
+	public int getaId() {
+		return aId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setaId(int aId) {
+		this.aId = aId;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getaName() {
+		return aName;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setaName(String aName) {
+		this.aName = aName;
+	}
+
+	public String getaEmail() {
+		return aEmail;
+	}
+
+	public void setaEmail(String aEmail) {
+		this.aEmail = aEmail;
+	}
+
+	public String getaPassword() {
+		return aPassword;
+	}
+
+	public void setaPassword(String aPassword) {
+		this.aPassword = aPassword;
 	}
 
 	@Override
 	public String toString() {
-		return "Admin [username=" + username + ", password=" + password + "]";
+		return "Admin [aId=" + aId + ", aName=" + aName + ", aEmail=" + aEmail + ", aPassword=" + aPassword + "]";
 	}
 	
 	
