@@ -1,6 +1,9 @@
 # shivering-boundary-7873
 Automated Student registration System.
 
+Description:  In a Educational Institute every year  technology trainings are conducted during summer and winter season. Students are enrolled in different courses under different technology track like- Android, Java ,JEE, PHP, Oracle etc. This automated application help Institute to enroll students efficiently, create batches under a course and allocates the students  in a batch . 
+
+
 In this project i have created Registration/Login for admin panel and for Students.
 the functionality i added in Student panel are
 1. Register new Student                   
